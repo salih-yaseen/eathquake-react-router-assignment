@@ -31,3 +31,13 @@ code {
   max-width: 800px;
   margin: auto;
 }
+
+.title {
+  text-align: center;
+}
+
+.event-details {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}

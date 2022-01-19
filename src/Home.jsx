@@ -4,21 +4,25 @@ import {Link} from 'react-router-dom';
 function Home() {
    const [events,setEvents]= useState([]);
 
-   useEffect(() => {
-       axios.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2022-01-01&endtime=2022-12-01&limit=10').then(res =>{
-           console.log(res)
-           setEvents(res.data.features)
+   useEffect(async() => {
+    const respond = await fetch(`https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2022-01-01&endtime=2022-12-01&limit=10`);
+    const data = await respond.json();
+    setEvents(data.features);
+
+    //    axios.get('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2022-01-01&endtime=2022-12-01&limit=10').then(res =>{
+    //        console.log(res)
+    //        setEvents(res.data.features)
            
-       }).catch( err=>{
-        console.log(err)
-       })
+    //    }).catch( err=>{
+    //     console.log(err)
+    //    })
 
       
    }, []);
    
     return (
         <>
-            <h1>Choose a city that you want</h1>
+            <h1 className='title'>Choose an event that you want</h1>
             <div className='event-wrapper'>
                     { 
                         events.map(event=>(
