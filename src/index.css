@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.events {
+  width: 200px;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: center;
+  box-shadow: 11px 7px 25px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 11px 7px 25px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 11px 7px 25px -8px rgba(0, 0, 0, 0.75);
+  text-decoration: none;
+  color: black;
+}
+
+.event-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 800px;
+  margin: auto;
+}
